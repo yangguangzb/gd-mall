@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>gd-parent</artifactId>
+    <groupId>com.gd</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.gd</groupId>
+  <artifactId>gd-manager</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  
+  <!-- 依赖管理 -->
+  <dependencies>
+  	<dependency>
+  		<groupId>com.gd</groupId>
+		<artifactId>gd-common</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+  
+  
+  <modules>
+  	<module>gd-manager-pojo</module>
+  	<module>gd-manager-mapper</module>
+  	<module>gd-manager-service</module>
+  	<module>gd-manager-web</module>
+  </modules>
+</project>
