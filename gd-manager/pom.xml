@@ -19,6 +19,20 @@
   	</dependency>
   </dependencies>
   
+  <!-- 配置Tomcat，运行聚合工程 -->
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.tomcat.maven</groupId>
+  			<artifactId>tomcat7-maven-plugin</artifactId>
+  			<version>2.2</version>
+  			<configuration>
+  				<port>8080</port>
+  				<path>/</path>
+  			</configuration>
+  		</plugin>
+  	</plugins>
+  </build>
   
   <modules>
   	<module>gd-manager-pojo</module>
