@@ -3,10 +3,13 @@ package com.gd.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.gd.common.pojo.EUDataGridResult;
+import com.gd.common.pojo.GdResult;
+import com.gd.pojo.GdItem;
 import com.gd.service.ItemService;
 
 /**
@@ -30,6 +33,12 @@ public class ItemController {
 		return result;
 	}
 	
-	
+	//添加商品
+	@RequestMapping(value="/save",method=RequestMethod.POST)
+	@ResponseBody
+	public GdResult createItem(GdItem item,String desc,String itemParams) throws Exception{
+		GdResult result = itemService.createItem(item, desc, itemParams);
+		return result;
+	}
 	
 }
