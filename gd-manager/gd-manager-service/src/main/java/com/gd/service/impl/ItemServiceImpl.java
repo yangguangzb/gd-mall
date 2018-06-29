@@ -82,7 +82,7 @@ public class ItemServiceImpl implements ItemService {
 			throw new Exception();
 		}
 		//添加
-		return null;
+		return result;
 	}
 	
 	//添加商品描述信息

@@ -33,7 +33,7 @@ public class PictureServiceImpl implements PictureService {
 	@Override
 	//上传图片
 	public Map uploadPicture(MultipartFile uploadFile) throws IOException {
-		Map<String, String> resultMap=new HashMap<String,String>();
+		Map<String, Object> resultMap=new HashMap<String,Object>();
 		try {
 			//取原文件名
 			String oldName=uploadFile.getOriginalFilename();
@@ -46,15 +46,15 @@ public class PictureServiceImpl implements PictureService {
 			boolean result=FtpUtil.uploadFile(FTP_ADDRESS, FTP_PORT, FTP_USERNAME, FTP_PASSWORD, FTP_BASE_PATH, 
 					imagePath, newName, uploadFile.getInputStream());
 			if(!result){
-				resultMap.put("error", "1");
+				resultMap.put("error", 1);
 				resultMap.put("message","文件上传失败");
 				return resultMap;
 			}
-			resultMap.put("error", "0");
+			resultMap.put("error", 0);
 			resultMap.put("url", IMAGE_BASE_URL+imagePath+"/"+newName);
 			return resultMap;
 		} catch (Exception e) {
-			resultMap.put("error", "1");
+			resultMap.put("error", 1);
 			resultMap.put("message","文件上传失败");
 			return resultMap;
 		}
