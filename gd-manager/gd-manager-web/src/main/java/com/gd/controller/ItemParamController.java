@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.gd.common.pojo.EUDataGridResult;
 import com.gd.common.pojo.GdResult;
+import com.gd.pojo.GdItemParam;
 import com.gd.service.ItemParamService;
 
 @Controller
@@ -35,4 +36,17 @@ public class ItemParamController {
 		System.out.println("商品规格参数:"+result.getRows());
 		return result;
 	}
+	
+	//保存规格参数模板
+	@RequestMapping("/save/{cid}")
+	@ResponseBody
+	public GdResult insertItemParam(@PathVariable Long cid, String paramData){
+		//创建pojo对象
+		GdItemParam itemParam = new GdItemParam();
+		itemParam.setItemCatId(cid);
+		itemParam.setParamData(paramData);
+		GdResult result = itemParamService.insertItemParam(itemParam);
+		return result;
+	}
+	
 }
