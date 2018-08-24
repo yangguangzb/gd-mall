@@ -16,4 +16,13 @@
 		<property name="suffix" value=".jsp"></property>
 	</bean>
 	
+	<!-- 配置登陆拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<!-- 拦截订单类请求 -->
+			<mvc:mapping path="/order/**"/>
+			<bean class="com.gd.portal.interceptor.LoginInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
 </beans>
